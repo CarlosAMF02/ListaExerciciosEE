@@ -11,7 +11,7 @@ double c = double.Parse(Console.ReadLine());
 
 Console.WriteLine($"Área do trângulo tendo A como base e C por altura: {(a * c) / 2}");
 Console.WriteLine($"Área do círculo de raio C: {(Math.PI * Math.Pow(c, 2)).ToString("F")}");
-Console.WriteLine($"Área do trapézio que tem A e C como bases e C por altura: {((a + b) * a) / 2}");
+Console.WriteLine($"Área do trapézio que tem A e B como bases e C por altura: {((a + b) * c) / 2}");
 Console.WriteLine($"Área do quadrado que tem lado B: {Math.Pow(b, 2)}");
 Console.WriteLine($"Área do retângulo que tem lados A e B: {a * b}");
 
@@ -126,7 +126,6 @@ while (numeroDesejado > 0)
 
 // Exercício 8
 
-bool fim = false;
 int cha = 0;
 int chi = 0;
 int qui = 0;
@@ -139,7 +138,7 @@ Console.WriteLine("2. Candidato Chiquinha");
 Console.WriteLine("3. Candidato Quico");
 Console.WriteLine("4. Nulo/Branco"); 
 Console.WriteLine("5. Encerrar a votação");
-while (fim == false)
+while (true)
 {
     Console.Write("Entre com seu voto: ");
     int opcao = int.Parse(Console.ReadLine());
@@ -198,13 +197,13 @@ while (fim == false)
             if (repeticoes == 1) Console.WriteLine($"O ganhador foi {ganhador}");
             else Console.WriteLine($"Houve um empate! O ganhadores foram {ganhador}");
 
-            fim = true;
             break;
         default:
-            Console.WriteLine("Opção Invalida");
+            Console.WriteLine("Opção Inválida");
             Console.ReadKey();
             break;
     }
+    if (opcao == 5) break;
 }
 
 // RM87204
